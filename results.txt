@@ -1,0 +1,628 @@
+$ python blstm_ctc.py
+Loading a subset of 320 samples.
+Phoneme Vocabulary (62 symbols): ['_', 'aa', 'ae', 'ah', 'ao', 'aw', 'ax', 'ax-h', 'axr', 'ay', 'b', 'bcl', 'ch', 'd', 'dcl', 'dh', 'dx', 'eh', 'el', 'em', 'en', 'eng', 'epi', 'er', 'ey', 'f', 'g', 'gcl', 'h#', 'hh', 'hv', 'ih', 'ix', 'iy', 'jh', 'k', 'kcl', 'l', 'm', 'n', 'ng', 'nx', 'ow', 'oy', 'p', 'pau', 'pcl', 'q', 'r', 's', 'sh', 't', 'tcl', 'th', 'uh', 'uw', 'ux', 'v', 'w', 'y', 'z', 'zh']
+Preprocessing training data...
+Training data preprocessed and normalized.
+Preparing one evaluation sample from the 64 available eval samples...
+Evaluation sample 'SX214' prepared.
+Starting BLSTM training with 256 samples...
+Epoch 1/10: 100%|██████████████████████████████████████████████████████████████| 256/256 [01:36<00:00,  2.65 sample/s, loss=164.7852]
+Epoch 1/10, Avg Loss: 175.6714
+--- Evaluating on eval sample 'SX214' after Epoch 1 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : s kcl s h#
+  LER (best path)         : 0.9286
+  Predicted (beam search) : eh s ae s kcl n s h#
+  LER (beam search)       : 0.8571
+-----------------------------------------------------------
+Epoch 2/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:37<00:00,  2.63 sample/s, loss=80.7690]
+Epoch 2/10, Avg Loss: 109.6279
+--- Evaluating on eval sample 'SX214' after Epoch 2 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# ax n iy n ih s ae n ix tcl ix n ih s n h#
+  LER (best path)         : 0.7063
+  Predicted (beam search) : h# ax n iy n ih s ae ae n ix tcl ix n ih s n h#
+  LER (beam search)       : 0.6905
+-----------------------------------------------------------
+Epoch 3/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:36<00:00,  2.65 sample/s, loss=93.9024]
+Epoch 3/10, Avg Loss: 89.4017
+--- Evaluating on eval sample 'SX214' after Epoch 3 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# ax bcl n ih s ae dcl s n ix kcl n ih s n h#
+  LER (best path)         : 0.6984
+  Predicted (beam search) : h# dh ax bcl n ih s ae dcl s n ix kcl n ih s n h#
+  LER (beam search)       : 0.6746
+-----------------------------------------------------------
+Epoch 4/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:37<00:00,  2.62 sample/s, loss=42.1312]
+Epoch 4/10, Avg Loss: 76.6306
+--- Evaluating on eval sample 'SX214' after Epoch 4 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh eh ax bcl d aa m eh z ae dcl l ae dcl eh s eh n ix n ix s ah h#
+  LER (best path)         : 0.5873
+  Predicted (beam search) : h# dh ax bcl d aa m eh z ae dcl l ae gcl bcl eh s eh n ix ix n ix s ah h#
+  LER (beam search)       : 0.5635
+-----------------------------------------------------------
+Epoch 5/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:37<00:00,  2.63 sample/s, loss=66.9688]
+Epoch 5/10, Avg Loss: 67.4536
+--- Evaluating on eval sample 'SX214' after Epoch 5 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh ax bcl ao nx d aa n ih s pcl ae dcl w bcl ih s eh n t ix pcl ih n ih s ah n h#
+  LER (best path)         : 0.4683
+  Predicted (beam search) : h# dh ax bcl ao nx d aa n ih s pcl ae dcl w gcl bcl ih s eh n t ix pcl ih n ih s ah n h#
+  LER (beam search)       : 0.4603
+-----------------------------------------------------------
+Epoch 6/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:36<00:00,  2.66 sample/s, loss=47.0261]
+Epoch 6/10, Avg Loss: 58.6524
+--- Evaluating on eval sample 'SX214' after Epoch 6 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh ax bcl ao nx d aa n m eh z pcl ae dcl w ae gcl bcl eh s eh n t ix m ix s ah m h#
+  LER (best path)         : 0.5079
+  Predicted (beam search) : h# dh ax bcl aa nx d aa n eh z bcl ae dcl w ae gcl bcl eh s eh n t ix q ix m ih s ah m h#
+  LER (beam search)       : 0.5079
+-----------------------------------------------------------
+Epoch 7/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:36<00:00,  2.64 sample/s, loss=63.8154]
+Epoch 7/10, Avg Loss: 51.6816
+--- Evaluating on eval sample 'SX214' after Epoch 7 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh ah bcl ao nx d ao n ih s pcl ae dcl ax w l bcl g ih s ah n t ix tcl n dh ih s ah n h#
+  LER (best path)         : 0.4683
+  Predicted (beam search) : h# dh ah bcl ao nx n d ao n ih s pcl ae dcl ax w l bcl bcl g ih s ah n t ix tcl n dh ih s ah n h#
+  LER (beam search)       : 0.4444
+-----------------------------------------------------------
+Epoch 8/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:36<00:00,  2.66 sample/s, loss=66.8215]
+Epoch 8/10, Avg Loss: 45.4191
+--- Evaluating on eval sample 'SX214' after Epoch 8 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh eh ax bcl ao nx iy dcl d l ao n eh s pcl ae dcl w tcl bcl pcl eh s ah n t ix n dh ix s ah n h#
+  LER (best path)         : 0.4286
+  Predicted (beam search) : h# dh ax bcl l nx iy dcl d l ao n eh s pcl ae dcl ih w l tcl bcl eh s ah n t ix n dh ix s ah n h#
+  LER (beam search)       : 0.4127
+-----------------------------------------------------------
+Epoch 9/10: 100%|███████████████████████████████████████████████████████████████| 256/256 [01:41<00:00,  2.51 sample/s, loss=50.6462]
+Epoch 9/10, Avg Loss: 39.4286
+--- Evaluating on eval sample 'SX214' after Epoch 9 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh ax m ao dcl d ao m eh s pcl ae dcl w ae bcl gcl g ih s eh ah v t ix tcl ix m s ah m h#
+  LER (best path)         : 0.4683
+  Predicted (beam search) : h# dh ax m ao dcl d ao m eh s pcl ae dcl w ae bcl gcl g ih s eh ah v t ix tcl ix m s ah m h#
+  LER (beam search)       : 0.4683
+-----------------------------------------------------------
+Epoch 10/10: 100%|██████████████████████████████████████████████████████████████| 256/256 [01:41<00:00,  2.51 sample/s, loss=29.9796]
+Epoch 10/10, Avg Loss: 34.1984
+--- Evaluating on eval sample 'SX214' after Epoch 10 ---
+  Target Text             : The morning dew on the spider web glistened in the sun.
+  Target Phonemes         : h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#
+  Predicted (best path)   : h# dh ax m ao nx dcl d l ao n ih s pcl ae dcl d ix ih ax w ae bcl g ih s ah t ix m dh ax s ah n z h#
+  LER (best path)         : 0.4365
+  Predicted (beam search) : h# dh ax m ao nx dcl d ih l ao n ih s pcl ae dcl d ix ih ax w ae bcl bcl g ih s ah t ix q ix m dh ax s ah n z h#
+  LER (beam search)       : 0.4048
+-----------------------------------------------------------
+BLSTM Training finished.
+Saved final model to blstm_ctc_model_phoneme_only.npy
+
+--- Starting Evaluation ---
+
+Evaluating Sample 1/64: SX214.WAV
+  Target Text         : "The morning dew on the spider web glistened in the sun."
+  Target Phonemes     : "h# dh ix m ao nx iy ng dcl d uw q ah n dh uh s pcl p ay dx ih w eh bcl pau g l ih s ih n dcl d ax-h pau q ih n dh ax s ah n h#"
+  Decoded Phonemes    : "h# dh ax m ao nx dcl d l ao n ih s pcl ae dcl d ix ih ax w ae bcl g ih s ah t ix m dh ax s ah n z h#"
+  Phoneme LER         : 0.4365
+  Predicted (beam search) : h# dh ax m ao nx dcl d ih l ao n ih s pcl ae dcl d ix ih ax w ae bcl bcl g ih s ah t ix q ix m dh ax s ah n z h#
+  LER (beam search)       : 0.4048
+
+Evaluating Sample 2/64: SI2270.WAV
+  Target Text         : "Dogs did something to one's ego."
+  Target Phonemes     : "h# d ao gcl g z dcl d ih dcl d s ah m th ih ng tcl t ax w ah n z q iy gcl g ow h#"
+  Decoded Phonemes    : "h# d aa gcl kcl s d ix dcl s ah tcl d ih ng n tcl t ax ah n z dcl d iy n y l h#"
+  Phoneme LER         : 0.3704
+  Predicted (beam search) : h# d aa gcl kcl s d ix dcl s ah tcl d ih ng n tcl t ax ah n z dcl d iy n y l h#
+  LER (beam search)       : 0.3704
+
+Evaluating Sample 3/64: SX304.WAV
+  Target Text         : "Cheap stockings run the first time they're worn."
+  Target Phonemes     : "h# ch iy pcl s tcl t aa kcl k ix ng z r ah n dh ax f er s tcl t ay m dh eh r ax w ao r n h#"
+  Decoded Phonemes    : "h# kcl s t aa tcl ix ng m gcl ah n f er s t ae m dcl d r w ix h#"
+  Phoneme LER         : 0.4615
+  Predicted (beam search) : h# ch kcl s t aa tcl ix ng en m ah n f er s t ae m dcl d r w ix h#
+  LER (beam search)       : 0.4176
+
+Evaluating Sample 4/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv eh dcl d y axr dcl d aa r kcl k s ux tcl q ix n gcl g r iy s iy w aa sh epi w ao dx axr q ao l y ih er h#"
+  Decoded Phonemes    : "h# sh iy hv ae dcl d y ux dcl d r k s ux q ih n kcl g r iy s y ux w ao sh epi w ao dx q l y axr z h#"
+  Phoneme LER         : 0.2906
+  Predicted (beam search) : h# sh iy hv ae dcl d y ux dcl d r k s ux ux iy q ih n kcl g r iy s y ux w ao sh epi w ao dx q l y y axr z h#
+  LER (beam search)       : 0.2906
+
+Evaluating Sample 5/64: SI1899.WAV
+  Target Text         : "You took me by surprise."
+  Target Phonemes     : "h# ux tcl t uh kcl k m iy bcl b ay s ax pcl p r ay z h#"
+  Decoded Phonemes    : "h# m ix dcl d ix kcl p b ix bcl b eh z ix bcl p r z h#"
+  Phoneme LER         : 0.3273
+  Predicted (beam search) : h# dh ix dcl d ix kcl b ix bcl b eh z ix bcl p r z h#
+  LER (beam search)       : 0.3636
+
+Evaluating Sample 6/64: SA2.WAV
+  Target Text         : "Don't ask me to carry an oily rag like that."
+  Target Phonemes     : "h# d ow n ae s kcl m iy dx ix kcl k eh r iy ix n q oy l iy r ae gcl g l ay kcl k dh ae tcl h#"
+  Decoded Phonemes    : "h# d ow m n iy ih s ix ng ix kcl eh r iy ix n ix l iy r kcl ay kcl ae h#"
+  Phoneme LER         : 0.3763
+  Predicted (beam search) : h# d ow m n iy ih s ix ng ix kcl k eh r iy ix n ix l iy r kcl ay kcl ae h#
+  LER (beam search)       : 0.3548
+
+Evaluating Sample 7/64: SX10.WAV
+  Target Text         : "Are your grades higher or lower than Nancy's?"
+  Target Phonemes     : "h# q aa r y er gcl g r ey dcl z hh ay er axr l ow axr dh ix n ae n s iy s h#"
+  Decoded Phonemes    : "h# aa r ae r tcl r dh eh n ae n s h#"
+  Phoneme LER         : 0.5789
+  Predicted (beam search) : h# aa r ae r ey tcl r dh eh n ae n s h#
+  LER (beam search)       : 0.5395
+
+Evaluating Sample 8/64: SX200.WAV
+  Target Text         : "Ralph controlled the stopwatch from the bleachers."
+  Target Phonemes     : "h# r ae l f kcl k ix n tcl t r ow l dh ax s tcl t aa pcl w aa tcl ch f r ax m ax bcl b l iy tcl ch axr s h#"
+  Decoded Phonemes    : "h# r l f k ix n kcl r l dcl dh ax s tcl t aa pcl b aa tcl f ah m ax bcl b l iy tcl ch axr z h#"
+  Phoneme LER         : 0.1963
+  Predicted (beam search) : h# r l f k t ix n kcl r l dcl dh ax s tcl t aa pcl b aa tcl f ah m ax bcl b l iy tcl ch axr z h#
+  LER (beam search)       : 0.1869
+
+Evaluating Sample 9/64: SX102.WAV
+  Target Text         : "Special task forces rescue hostages from kidnappers."
+  Target Phonemes     : "h# s pcl p eh sh el tcl t ae s kcl k f ao r s ix z r eh s kcl k y ux hv aa s tcl ix dcl jh ix z f em kcl k ih dcl n ae pcl p axr s h#"
+  Decoded Phonemes    : "h# s pcl p ih sh el tcl t ae s kcl f ow z m epi z r ix s epi y ux m ao s jh ix z en tcl ih dx dh pcl ax h#"
+  Phoneme LER         : 0.3609
+  Predicted (beam search) : h# s pcl p ih sh el tcl t ae s kcl f ow z m epi z r ix s y ux m ao s jh ix z m en tcl ih dx q dh pcl ax h#
+  LER (beam search)       : 0.3534
+
+Evaluating Sample 10/64: SX100.WAV
+  Target Text         : "Project development was proceeding too slowly."
+  Target Phonemes     : "h# p r aa dcl jh ih kcl d ix v eh l q m ih n q w uh z pcl p axr s iy dx iy ng tcl t ux s l ow l iy h#"
+  Decoded Phonemes    : "h# r aa r z ih tcl t ix v ao n ae n ah z p axr s iy ey dx ih ng tcl t ey ah z l iy h#"
+  Phoneme LER         : 0.3762
+  Predicted (beam search) : h# r aa r z ih tcl t ix v ao n ae n ah z p axr s iy ey dx ih ng tcl t ey ah z l iy h#
+  LER (beam search)       : 0.3762
+
+Evaluating Sample 11/64: SI745.WAV
+  Target Text         : "Broil or toast as usual."
+  Target Phonemes     : "h# b r oy l q ao r tcl t ow s tcl t ix z y ux zh uw el h#"
+  Decoded Phonemes    : "h# p ao r tcl t ae s ix z ux dcl r el h#"
+  Phoneme LER         : 0.4386
+  Predicted (beam search) : h# b p ow bcl ao r tcl t ae s ix z ux dcl r el h#
+  LER (beam search)       : 0.3509
+
+Evaluating Sample 12/64: SX104.WAV
+  Target Text         : "He stole a dime from a beggar."
+  Target Phonemes     : "h# hh iy s tcl t ow l ax dcl d ay m f ax m ax bcl b eh gcl axr h#"
+  Decoded Phonemes    : "h# hh iy ux s l w ix dcl d ay tcl pcl ax m ax bcl b eh n axr h#"
+  Phoneme LER         : 0.2923
+  Predicted (beam search) : h# hh iy ux s t l w ix dcl d ay tcl pcl t ax m ax bcl b d eh n y axr h#
+  LER (beam search)       : 0.3385
+
+Evaluating Sample 13/64: SI730.WAV
+  Target Text         : "Another memo for sightseers: bring your camera along to museums."
+  Target Phonemes     : "h# q ax n ah dh er m eh m ow f er s ay q s iy er z pau b r iy ng y er kcl k ae m er ah l ao ng tcl t ix m ux z iy ax m epi s h#"
+  Decoded Phonemes    : "h# ah v eh m ae nx l f axr er s ay axr z p r iy kcl k ae m aa aw ao n tcl t ix en m iy s iy z h#"
+  Phoneme LER         : 0.4488
+  Predicted (beam search) : h# ah ah v eh m ae nx l f axr er s ay axr z p r iy d kcl k ae m r aa aw ao n tcl t ix en m iy s iy z h#
+  LER (beam search)       : 0.4252
+
+Evaluating Sample 14/64: SA2.WAV
+  Target Text         : "Don't ask me to carry an oily rag like that."
+  Target Phonemes     : "h# d ow nx ae s kcl m iy tcl t ux kcl k eh r ih q ix n q oy l ih r ey gcl l ay kcl dh ae tcl h#"
+  Decoded Phonemes    : "d ow nx ae s epi m iy tcl kcl k r iy ix n l r ix gcl ah ay m ae tcl h#"
+  Phoneme LER         : 0.3684
+  Predicted (beam search) : d ow nx ae s epi bcl m iy tcl kcl k r iy ix n q l l iy r ix gcl g ah ay m ae tcl h#
+  LER (beam search)       : 0.3263
+
+Evaluating Sample 15/64: SX279.WAV
+  Target Text         : "Alice's ability to work without supervision is noteworthy."
+  Target Phonemes     : "h# q ae l ah s ix z ah bcl b ih l ih tcl t iy tcl t uw w er kcl w ih th aw tcl s uw pcl p axr v ih zh ix n pau ih z n ow tcl t w axr dh ix h#"
+  Decoded Phonemes    : "h# q eh ax z ix s ax bcl b ax tcl t w er tcl k w ix tcl t aw tcl t ux pcl p axr f ih sh ix n ih z ix m ow l kcl k w ao r axr dh h#"
+  Phoneme LER         : 0.3830
+  Predicted (beam search) : h# q eh ax z ix s ax bcl b ax tcl tcl t w er tcl w ix tcl t aw tcl t ux pcl p axr f ih sh ix n q ih z ix m ow l kcl k w ao r axr dh h#
+  LER (beam search)       : 0.3546
+
+Evaluating Sample 16/64: SX191.WAV
+  Target Text         : "Withdraw all phony accusations at once."
+  Target Phonemes     : "h# w ix th dcl d r ao q ao l f ow nx iy q ae kcl k y ux z ey sh ix n z eh q w ah n tcl t s h#"
+  Decoded Phonemes    : "h# w ix tcl t r l f eh ow iy n ae kcl t ix z sh ix z ah v ao r n kcl s h#"
+  Phoneme LER         : 0.3763
+  Predicted (beam search) : h# w ix tcl tcl t r l l f eh ow iy n q ae kcl t ix z sh ix z ah v ao r n kcl s h#
+  LER (beam search)       : 0.3656
+
+Evaluating Sample 17/64: SX368.WAV
+  Target Text         : "Lori's costume needed black gloves to be completely elegant."
+  Target Phonemes     : "h# l ao r iy z kcl k aa s tcl t ax m n iy dx ih bcl b l ae kcl g l ah v z tcl t ix bcl b iy kcl k ax m pcl p l iy q l iy eh l ix gcl g ix n tcl h#"
+  Decoded Phonemes    : "h# b r s t aa s kcl t ih y ix n ih bcl b ay kcl k ow z tcl t ix bcl d b iy n kcl k n tcl t iy l iy eh l gcl g eh n tcl h#"
+  Phoneme LER         : 0.3493
+  Predicted (beam search) : h# b r s t aa s kcl t ih y ix n d ih bcl b ay kcl k ow z tcl t ix bcl d b iy n kcl k n tcl t iy l iy y eh l l gcl g eh n tcl h#
+  LER (beam search)       : 0.3562
+
+Evaluating Sample 18/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv ae dcl d y er dcl d aa r kcl k s ux tcl t q ix n gcl g r iy s iy w aa sh epi w ao dx axr q ao l y iy er h#"
+  Decoded Phonemes    : "sh iy hv ae dcl d y axr dcl d aa r k s ux tcl ix n gcl g r iy s iy aa sh epi w ao dx axr l ih h#"
+  Phoneme LER         : 0.2203
+  Predicted (beam search) : sh iy hv ae dcl d y axr dcl d aa r k s ux ux tcl ix n gcl g r iy s iy w aa sh epi w ao dx axr l y ih h#
+  LER (beam search)       : 0.1949
+
+Evaluating Sample 19/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv ae dcl jh axr dcl d aa r kcl k s ux tcl en gcl g r iy s iy w ao sh epi w aa dx axr q ao l y ix axr h#"
+  Decoded Phonemes    : "h# sh hv ae dcl jh y axr dcl d r kcl k s ux tcl ih r iy s aa sh ao dx q ao zh y ih axr h#"
+  Phoneme LER         : 0.3186
+  Predicted (beam search) : h# sh iy hv ae dcl jh y axr dcl d r kcl k s ux tcl ih r iy s iy aa sh ao dx q ao zh y y ih axr h#
+  LER (beam search)       : 0.2832
+
+Evaluating Sample 20/64: SI522.WAV
+  Target Text         : "Progress is being made, too, in improving motorists' access to many turnpikes."
+  Target Phonemes     : "h# p r aa gcl g r ih s ix z bcl b iy ng m ey dcl t ux q ih n ih m pcl p r uw v iy ng m ow dx er ih s q ae kcl k s eh s tcl t em eh n iy tcl t er n pcl p ay kcl k s h#"
+  Decoded Phonemes    : "h# p r aa ae sh ih z bcl b n m tcl s tcl ix n ih n tcl ey dx ih s q ae kcl k s ae s t ix m eh n ey tcl jh ae n p ay kcl s h#"
+  Phoneme LER         : 0.3976
+  Predicted (beam search) : h# p r aa ae sh ix z bcl b ng n m tcl s ey tcl ix n ih n tcl ey dx ih s q ae kcl k s ae s t ix m eh n ey tcl jh ae n p ay kcl s h#
+  LER (beam search)       : 0.3916
+
+Evaluating Sample 21/64: SI944.WAV
+  Target Text         : "If the farm is rented, the rent must be paid."
+  Target Phonemes     : "h# q ix v dh ax f aa r m ix z r eh n tcl t ix dcl dh ax r eh n q m ax s bcl b iy pcl p ey dcl d h#"
+  Decoded Phonemes    : "h# q ix sh ih s f aa r ix z r ae tcl t ih dcl d axr ae m ih s epi m b iy kcl t ey tcl d h#"
+  Phoneme LER         : 0.3061
+  Predicted (beam search) : h# q ix sh ih s f aa r ix z r ae tcl t ih dcl d axr ae m ih s epi m b iy kcl t ae ey tcl t h#
+  LER (beam search)       : 0.3469
+
+Evaluating Sample 22/64: SX373.WAV
+  Target Text         : "A boring novel is a superb sleeping pill."
+  Target Phonemes     : "h# q ah bcl b ao r ih ng n aa v el q ix z ix s uh pcl p er bcl b s l iy pcl p ix ng pcl p ih l h#"
+  Decoded Phonemes    : "h# q ah bcl b ao r ng m aa hv ix z ix s ix pcl p er axr s l iy kcl pcl p ix ng t ih h#"
+  Phoneme LER         : 0.2887
+  Predicted (beam search) : h# q ah bcl b ao r ng m aa hv ix z ix s ix pcl p er axr s l iy kcl pcl p ix ng t ih h#
+  LER (beam search)       : 0.2887
+
+Evaluating Sample 23/64: SI1230.WAV
+  Target Text         : "Princes and factions clashed in the open street and died on the open scaffold."
+  Target Phonemes     : "h# p r eh n tcl t s ih z eh n f ae kcl k sh ix n z pau k l ae sh tcl t ix n iy ow pcl p ax n s tcl t r iy dx ix n dcl d ay dx ah n iy ow pcl p ax n tcl s kcl k ae f el dcl d h#"
+  Decoded Phonemes    : "h# p ih eh n tcl ih z ix n ae t ix z t aa s t ix n iy y ih l g b ax n s t tcl t r iy dx ix n dcl b ay ao n iy y ih l ix sh ae el tcl h#"
+  Phoneme LER         : 0.4091
+  Predicted (beam search) : h# p eh n tcl ih z ix n ae ch ix z t aa s t ix m d iy y ih l g b ax n s t tcl t r iy dx ix n dcl b ay ao n iy y ih l ix en epi sh ae el tcl h#
+  LER (beam search)       : 0.3920
+
+Evaluating Sample 24/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv ae dcl y axr dcl d aa r kcl k s uw q ix n gcl g r iy s iy w aa sh epi w ao dx axr ao l y ih axr h#"
+  Decoded Phonemes    : "h# sh iy hv ae dcl g y axr dcl b d r kcl k s ux dcl d ix n gcl g r iy s iy ux ao sh epi w ao dx l y ih h#"
+  Phoneme LER         : 0.2273
+  Predicted (beam search) : h# sh iy hv ae dcl g y axr dcl d r kcl k s ux dcl d ix n g r iy s iy ux ao sh epi w ao dx ow l y ih h#
+  LER (beam search)       : 0.2545
+
+Evaluating Sample 25/64: SI1541.WAV
+  Target Text         : "It gave the rubberized fabric a dull gleam, like metal."
+  Target Phonemes     : "h# q ih tcl t gcl g ey v dh ix r ah bcl b axr ay z dcl d f ae bcl b r ih kcl k q ey dcl d ah l gcl g l iy m pau l ay kcl m eh dx el h#"
+  Decoded Phonemes    : "h# b ih tcl d axr r bcl axr r ay s f ae bcl r ix kcl k q dcl d ow n g l iy ix dcl bcl l ay kcl g m q h#"
+  Phoneme LER         : 0.4254
+  Predicted (beam search) : h# b ih tcl d d axr r r bcl axr r ay s f ae bcl r ix kcl k q dcl d ow n g l iy ix dcl bcl l ay kcl g m q h#
+  LER (beam search)       : 0.4179
+
+Evaluating Sample 26/64: SX394.WAV
+  Target Text         : "Calcium makes bones and teeth strong."
+  Target Phonemes     : "h# k ae l s iy ix m ey kcl k s bcl b ow n z ix n tcl t iy th s tcl t r ao ng h#"
+  Decoded Phonemes    : "h# eh l s ax m ih eh kcl k s b ow n z ix n t s t r aa h#"
+  Phoneme LER         : 0.4177
+  Predicted (beam search) : h# eh l s iy ax m ih eh kcl k s b ow n z ix n t s tcl t r axr q aa h#
+  LER (beam search)       : 0.3671
+
+Evaluating Sample 27/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh ix hv ae dcl jh er dcl d aa r kcl k s ux tcl q ix n gcl g r iy s ix w aa sh epi w ao dx axr q ao l epi y ih axr h#"
+  Decoded Phonemes    : "h# m y ih hv ae dcl jh d axr dcl d aa r kcl k s ux tcl ix n gcl g r iy ix s ux aa sh w r dx axr q l iy y ih h#"
+  Phoneme LER         : 0.2667
+  Predicted (beam search) : h# sh m y ih hv ae dcl jh d axr dcl d aa r kcl k s ux tcl ix n gcl g r iy ix s ux aa sh f w r dx axr q l iy y ih h#
+  LER (beam search)       : 0.2667
+
+Evaluating Sample 28/64: SX185.WAV
+  Target Text         : "Did you buy any corduroy overalls?"
+  Target Phonemes     : "h# d ix dcl jh ux bcl b ay ix n iy kcl k ao r dx axr oy ow v axr ao l z h#"
+  Decoded Phonemes    : "h# d ix gcl jh iy bcl b n kcl k ao dx axr ae v axr aw z h#"
+  Phoneme LER         : 0.2973
+  Predicted (beam search) : h# ix gcl jh iy bcl b n kcl k ao dx axr ae v axr aw z h#
+  LER (beam search)       : 0.3243
+
+Evaluating Sample 29/64: SX314.WAV
+  Target Text         : "If people were more generous, there would be no need for welfare."
+  Target Phonemes     : "h# ix f pcl p iy pcl p el w axr m ao r dcl jh eh n axr ah s pau dh ah w uh dcl b iy n ow n iy dcl d f axr w eh l f eh r h#"
+  Decoded Phonemes    : "h# ix s t kcl p b w ao r m ao r dcl jh eh nx er s t ax dcl b ih dx ao n ey n ch axr n w l ae h#"
+  Phoneme LER         : 0.4180
+  Predicted (beam search) : h# ix s t kcl b ow w ao r m ao r dcl jh eh nx ae s t ax dcl b ih dx ao n iy ey n f axr n w l ae h#
+  LER (beam search)       : 0.3934
+
+Evaluating Sample 30/64: SX216.WAV
+  Target Text         : "The small boy put the worm on the hook."
+  Target Phonemes     : "h# dh ax-h s epi m ao l bcl b oy pcl p uh tcl dh ax w er m aa n dh ax hv uh kcl k h#"
+  Decoded Phonemes    : "h# dh ix z ao aw bcl b ay kcl ax tcl ax w ao r m ah n ax ah kcl h#"
+  Phoneme LER         : 0.4048
+  Predicted (beam search) : h# dh ix z ao bcl b oy kcl ax tcl ax w ao r m ah n ax ah kcl p h#
+  LER (beam search)       : 0.3810
+
+Evaluating Sample 31/64: SA2.WAV
+  Target Text         : "Don't ask me to carry an oily rag like that."
+  Target Phonemes     : "h# d ow nx ae s kcl m iy tcl t ix kcl k eh r iy q ah n q oy l iy r ae gcl g l ay kcl dh ae tcl h#"
+  Decoded Phonemes    : "h# b ow n ae s epi m v ix kcl k ih eh r q oy l iy ix r ae gcl g l ay f dh ae tcl h#"
+  Phoneme LER         : 0.2990
+  Predicted (beam search) : h# b ow n ae s epi epi m iy v d ih kcl k ih eh r iy q n oy l iy ix r ae gcl g l ay f dh ae tcl h#
+  LER (beam search)       : 0.2887
+
+Evaluating Sample 32/64: SX306.WAV
+  Target Text         : "A chosen few will become Generals."
+  Target Phonemes     : "h# q ax tcl ch ow z ix n f y ux w el bcl b iy kcl k ah m dcl jh eh n axr el s h#"
+  Decoded Phonemes    : "h# ix tcl t ch ow z ix en v f ix l bcl b ix kcl k jh ae l h#"
+  Phoneme LER         : 0.4000
+  Predicted (beam search) : h# q ix tcl t ch ow z ix en v f ih l bcl b ix kcl k jh ae l h#
+  LER (beam search)       : 0.3875
+
+Evaluating Sample 33/64: SX194.WAV
+  Target Text         : "They enjoy it when I audition."
+  Target Phonemes     : "h# dh ey ix n dcl jh oy ix tcl w ah nx ay ao dcl d ih sh en h#"
+  Decoded Phonemes    : "h# d ey m n t w ax n aw dcl d y sh ix en h#"
+  Phoneme LER         : 0.4677
+  Predicted (beam search) : h# d ey ey m n t w ax n aw dcl d y sh ix en h#
+  LER (beam search)       : 0.4677
+
+Evaluating Sample 34/64: SX304.WAV
+  Target Text         : "Cheap stockings run the first time they're worn."
+  Target Phonemes     : "h# ch iy pcl s tcl t aa kcl k iy ng z epi r ah n dh ax f er s tcl t ay m dh eh r w ao ax n h#"
+  Decoded Phonemes    : "h# sh iy s tcl t ae n kcl t iy ix z m r ah n en ah f ih z t p ae en eh bcl ao h#"
+  Phoneme LER         : 0.3871
+  Predicted (beam search) : h# sh iy s tcl t ae n kcl t iy ix z m r ah en g ah f ih z t p ae en eh bcl ao h#
+  LER (beam search)       : 0.3978
+
+Evaluating Sample 35/64: SX95.WAV
+  Target Text         : "Iguanas and alligators are tropical reptiles."
+  Target Phonemes     : "h# iy gcl g w aa nx ah z ix n q ae l ax gcl g ey dx er z axr tcl t r aa pcl p kcl k el r eh pcl t ay l s h#"
+  Decoded Phonemes    : "h# ix iy kcl k ao dx z s dx ay q ao gcl ih dx axr z axr kcl k aa tcl bcl el r eh pcl t h#"
+  Phoneme LER         : 0.4019
+  Predicted (beam search) : h# q ix iy kcl k ao dx z s dx ay q ao gcl ih dx axr z axr kcl k aa tcl bcl el r eh pcl t h#
+  LER (beam search)       : 0.4206
+
+Evaluating Sample 36/64: SI1894.WAV
+  Target Text         : "My father ran him off here six years ago."
+  Target Phonemes     : "h# m ay f aa dh axr r ae n hv ix m q ao f hh ih axr s ih kcl k s y ih axr z ix gcl g ow h#"
+  Decoded Phonemes    : "h# ae f aa dx eh m r ae m ix m aa f k y ih axr z ix kcl k iy y ih z ax gcl g d aw l"
+  Phoneme LER         : 0.3556
+  Predicted (beam search) : h# ae f aa dx eh m r ae m ix m aa f k hh y ih axr z ix kcl k iy y ih z ax gcl g d aw l h#
+  LER (beam search)       : 0.3667
+
+Evaluating Sample 37/64: SX295.WAV
+  Target Text         : "If Carol comes tomorrow, have her arrange for a meeting at two."
+  Target Phonemes     : "h# ix f kcl k eh r ax l kcl k ah m z tcl t ax-h m aa r ow pau hh ae v er axr r ey n dcl jh f axr ax m iy dx iy ng ix tcl t ux h#"
+  Decoded Phonemes    : "h# q ix kcl k q ow kcl k eh m z tcl m ae tcl ae r ix n f er m iy ix dx ix hv q y ix tcl ih dx axr h#"
+  Phoneme LER         : 0.5234
+  Predicted (beam search) : h# q ix kcl k q ow kcl k t eh m z tcl m ae tcl ae r ix n f er m iy ix dx ix hv q y ix tcl ih dx axr h#
+  LER (beam search)       : 0.5391
+
+Evaluating Sample 38/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv eh y ux dcl d aa r kcl s ux tcl t ix ng gcl g r iy s ix w aa sh epi w ah dx axr q ao l y ih axr h#"
+  Decoded Phonemes    : "h# ix hv ae ix dcl d r s ux tcl ix kcl gcl g r iy s y w ao sh epi w dx r axr l ih axr h#"
+  Phoneme LER         : 0.3182
+  Predicted (beam search) : h# ix hv ae ix dcl d r s ux tcl ix n kcl gcl g r iy s y w w ao sh epi w dx r axr l ih axr h#
+  LER (beam search)       : 0.3364
+
+Evaluating Sample 39/64: SI2149.WAV
+  Target Text         : "Let's be fine superior people of great dignity, he said as if he were joking."
+  Target Phonemes     : "h# l eh tcl t s bcl b iy f ay n s ix pcl p ih r iy axr pcl p iy pcl p ax l ah v gcl g r ey tcl d ih gcl n ih tcl t iy pau hh ix s eh dx eh z ix f hh iy w axr dcl jh ow kcl k iy ng h#"
+  Decoded Phonemes    : "h# eh tcl b iy f ng sh ix pcl p axr er p pcl p b l gcl r kcl t ih ng ih tcl t dh ix s ae dx ih z ix kcl w axr dcl l kcl k n h#"
+  Phoneme LER         : 0.4121
+  Predicted (beam search) : h# eh tcl s b iy f ay ng sh ix pcl p axr er p pcl p b l gcl r kcl t ih ng ih tcl t dh ix s ae dx ih z ix kcl w axr dcl l kcl k n h#
+  LER (beam search)       : 0.3846
+
+Evaluating Sample 40/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv ae dcl jh axr dcl d aa r kcl k s uw tcl t q ix n gcl g r iy s iy pau w ao sh epi w ao dx er q ao l y ih er h#"
+  Decoded Phonemes    : "h# sh iy hv eh n axr dcl d r kcl k s ux tcl d bcl q ix gcl g p r ix s iy hv w aa sh ao dx q ao l ih eh h#"
+  Phoneme LER         : 0.3058
+  Predicted (beam search) : h# sh iy hv eh n axr dcl d r kcl k s ux tcl d bcl q ix gcl g p r s iy hv w aa sh epi ao dx q ao l y ih eh er h#
+  LER (beam search)       : 0.2727
+
+Evaluating Sample 41/64: SX8.WAV
+  Target Text         : "Why yell or worry over silly items?"
+  Target Phonemes     : "h# w ay y eh l axr w er iy ow v axr s ih l iy ay dx ax m s h#"
+  Decoded Phonemes    : "h# oy y eh ow axr ow w r iy ow v axr sh l iy ay ix ah m t s h#"
+  Phoneme LER         : 0.2295
+  Predicted (beam search) : h# w oy y eh ow axr ow w r iy ow v axr sh l iy ay ix ah m t s h#
+  LER (beam search)       : 0.1967
+
+Evaluating Sample 42/64: SI1566.WAV
+  Target Text         : "One had to believe in final events or one was stranded in the abyss of nothing."
+  Target Phonemes     : "h# w ah n ix hv ae dcl t ix bcl b ax l iy v ih n f ay nx ax l iy v eh n tcl t s pau q ao w ah n w ix s tcl t r ae n dcl d ix dcl q ix n dh iy ix bcl b ih s ax v n aa th ix ng h#"
+  Decoded Phonemes    : "h# m w ah n hv ae dcl t ix ax l iy ux v ih ix n f ay n ax l v dh axr ow n ah n w ix s t r ae n ih dx q n dx ih dcl bcl b ih s ix v ah f b ih ix n h#"
+  Phoneme LER         : 0.3785
+  Predicted (beam search) : h# m w ah n hv ae dcl t ix ax l l iy ux v ih n f ay n ax l v dh axr ow n ah n w ix s t r ae n ih dx dx q n dx ih bcl b ih s ix v ah f b ih ix n h#
+  LER (beam search)       : 0.3616
+
+Evaluating Sample 43/64: SX13.WAV
+  Target Text         : "Swing your arm as high as you can."
+  Target Phonemes     : "h# s w ih ng y er aa r m q eh z hh ay ih z ux kcl k ae n h#"
+  Decoded Phonemes    : "h# s w ix ng y r m ae z ay ix z iy kcl k m h#"
+  Phoneme LER         : 0.3390
+  Predicted (beam search) : h# s w ix ng y r m ae z ay ix z iy kcl k m h#
+  LER (beam search)       : 0.3390
+
+Evaluating Sample 44/64: SA2.WAV
+  Target Text         : "Don't ask me to carry an oily rag like that."
+  Target Phonemes     : "h# d ow nx ae s epi m iy dx ix kcl k ih r iy ix nx ax q oy l iy r ae gcl g l ay kcl dh ae tcl h#"
+  Decoded Phonemes    : "h# d ow nx ae epi m iy dx ih kcl k ih r iy ae ix nx w oy l iy r ae gcl g l ay kcl dh d ae tcl h#"
+  Phoneme LER         : 0.1042
+  Predicted (beam search) : h# d ow nx ae epi m iy dx ih kcl k ih r iy ae ix nx q w oy l iy ux r ae gcl g l ay kcl dh d ae tcl h#
+  LER (beam search)       : 0.1458
+
+Evaluating Sample 45/64: SX110.WAV
+  Target Text         : "The best way to learn is to solve extra problems."
+  Target Phonemes     : "h# dh ax-h bcl b eh s tcl w ey dx ix l er nx ix s tcl t ax-h s aa l v q eh kcl k s tcl t r ix pcl p r aa bcl b l em epi s h#"
+  Decoded Phonemes    : "h# ax bcl b eh s epi w oy ix dx r nx ix s t ix s l tcl d eh kcl s kcl t axr f p r aa m l m h#"
+  Phoneme LER         : 0.3952
+  Predicted (beam search) : h# ax bcl b eh s epi w oy ix dx r nx ix s t ix s l tcl d eh kcl s kcl t axr f p r aa m l m h#
+  LER (beam search)       : 0.3952
+
+Evaluating Sample 46/64: SX19.WAV
+  Target Text         : "Aluminum silverware can often be flimsy."
+  Target Phonemes     : "h# ah l uw m ix n ah m s ih l v axr w eh axr kcl k ix n q ao f ix n bcl b iy f l ih m z iy h#"
+  Decoded Phonemes    : "h# b ow v l n eh ix n m s l ax ow w er ix nx m ao f ax ix m v d iy f m ih ah z iy h#"
+  Phoneme LER         : 0.4301
+  Predicted (beam search) : h# b ow v l n eh ix n m s s l ax ow w er ix nx m ao f ax ix m v d iy f m ih ah z iy h#
+  LER (beam search)       : 0.4409
+
+Evaluating Sample 47/64: SI1904.WAV
+  Target Text         : "When suitably lighted, what would it look like?"
+  Target Phonemes     : "h# hh w eh n s ux tcl t ix bcl b l iy l ay tcl t ih dcl d pau hh w ah q w uh dx ih tcl l uh kcl k l ay kcl k h#"
+  Decoded Phonemes    : "l ih n s ih tcl t ix dcl d ix l tcl t ey dcl t ah ow w dx ih ax ih k p ay h#"
+  Phoneme LER         : 0.4595
+  Predicted (beam search) : h# l ih n s ih tcl t ix dcl d ix l tcl t ey dcl t ah ow w dx ih ax ih k p ay h#
+  LER (beam search)       : 0.4324
+
+Evaluating Sample 48/64: SI1669.WAV
+  Target Text         : "Be excited and don't identify yourself."
+  Target Phonemes     : "h# b iy ix kcl k s ay dx ih dcl d ih n dcl d ow nx ah dcl d eh nx ax f ay axr s eh l f h#"
+  Decoded Phonemes    : "h# b ey kcl s dcl d ix n t d ow ax t ix n hv f oy ay er ix s ow s f h#"
+  Phoneme LER         : 0.4607
+  Predicted (beam search) : h# b ey s s dcl d ix n t d ow ax t ix n hv f oy er ix s ow f h#
+  LER (beam search)       : 0.5056
+
+Evaluating Sample 49/64: SX194.WAV
+  Target Text         : "They enjoy it when I audition."
+  Target Phonemes     : "h# dh ey ih n dcl jh oy eh tcl t hh w ax nx ay ah dcl d ih sh ax n h#"
+  Decoded Phonemes    : "h# b n tcl jh ay q l ay tcl d sh ix n h#"
+  Phoneme LER         : 0.5072
+  Predicted (beam search) : h# b n tcl jh ay q l ay tcl d sh ix n h#
+  LER (beam search)       : 0.5072
+
+Evaluating Sample 50/64: SX404.WAV
+  Target Text         : "Barb burned paper and leaves in a big bonfire."
+  Target Phonemes     : "h# b aa r bcl b er n dcl p ey pcl p axr en l iy v z ix n ax bcl b ih gcl b aa n epi f ay axr h#"
+  Decoded Phonemes    : "h# b bcl b er ix n p gcl g p er axr l iy z ax bcl b ix gcl b ao tcl f axr h#"
+  Phoneme LER         : 0.4000
+  Predicted (beam search) : h# b bcl b er ix n p ey g p er axr l iy z ax bcl b ix gcl b ao tcl axr h#
+  LER (beam search)       : 0.3895
+
+Evaluating Sample 51/64: SX95.WAV
+  Target Text         : "Iguanas and alligators are tropical reptiles."
+  Target Phonemes     : "h# ix gcl g w aa n ix z ix n ae l ix gcl g ey dx axr z axr tcl t r aa pcl p ix kcl k el r eh pcl t ay l z h#"
+  Decoded Phonemes    : "h# ix bcl q aa nx hv ae z ax tcl ey dx axr sh ix tcl t r aa bcl b ix kcl l ow m r ih pcl t h#"
+  Phoneme LER         : 0.3333
+  Predicted (beam search) : h# ix bcl q aa nx ae z ax tcl ey dx axr sh ix tcl t r aa bcl b ix kcl l ow m r ih pcl t h#
+  LER (beam search)       : 0.3426
+
+Evaluating Sample 52/64: SI1398.WAV
+  Target Text         : "Do they make class-biased decisions?"
+  Target Phonemes     : "h# d ux dh ey m ey kcl k l ae s bcl b ay eh s tcl d iy s ih zh en epi z h#"
+  Decoded Phonemes    : "h# d ux f hv ey m ey kcl k ae kcl b ay ih s t ix s r ih z ix h#"
+  Phoneme LER         : 0.3108
+  Predicted (beam search) : h# d ux f ey m ey kcl k l ae kcl b ay ih s t ix s r ih z ix h#
+  LER (beam search)       : 0.2703
+
+Evaluating Sample 53/64: SI2203.WAV
+  Target Text         : "The reasons for this dive seemed foolish now."
+  Target Phonemes     : "h# dh ix r iy z ax n z f axr dh ih s dcl d ay v s iy m dcl d f uw l ix sh epi n aw h#"
+  Decoded Phonemes    : "h# dh d ih v r iy ix s ih dcl d ix s b ay kcl s f el ih sh hh l h#"
+  Phoneme LER         : 0.4588
+  Predicted (beam search) : h# dh d ih v r iy ix s s ih dcl d ix s b ay kcl s kcl f el l ih sh hh l h#
+  LER (beam search)       : 0.4941
+
+Evaluating Sample 54/64: SX113.WAV
+  Target Text         : "A muscular abdomen is good for your back."
+  Target Phonemes     : "h# q ey m ah s kcl k ih l ah q ae bcl d ax m eh n pau ix z gcl g uh dcl f ao y ix bcl b ae kcl k h#"
+  Decoded Phonemes    : "h# b q ey m ah s hh ih ae bcl g d ax m ah en ih z dcl pcl p d ih tcl f ao l ix bcl b ae kcl h#"
+  Phoneme LER         : 0.3535
+  Predicted (beam search) : h# b ey m ah s hh ih ae bcl d ax m ah en pau ih z dcl pcl d ih tcl f ao l ix bcl b ae kcl h#
+  LER (beam search)       : 0.2727
+
+Evaluating Sample 55/64: SI1544.WAV
+  Target Text         : "He had plunged into the dark woods beyond."
+  Target Phonemes     : "h# hh iy hv ae dcl p l ah n jh dcl d ih n tcl t ix dh ix dcl d aa r kcl k w uh dcl d z bcl b iy aa n dcl d h#"
+  Decoded Phonemes    : "h# iy ae tcl p ah dx z dcl t ih n jh ix v dh ix dcl d r kcl k ih tcl s b iy eh r n t h#"
+  Phoneme LER         : 0.3853
+  Predicted (beam search) : h# iy y ae tcl p ah dx z dcl t ih n jh ix dh ix dcl d r kcl k ih tcl s b iy eh r n t h#
+  LER (beam search)       : 0.3578
+
+Evaluating Sample 56/64: SI1452.WAV
+  Target Text         : "Poultry: results of irradiation tests with poultry have been quite successful."
+  Target Phonemes     : "h# p ow l tcl t r iy pau r iy z ah l tcl s ax v ih r ey dx iy ey sh en tcl t eh s tcl w ax-h th pcl p ow l tcl t r iy hh ax bcl b ix n kcl k w ay tcl s ix kcl k s eh s f el h#"
+  Decoded Phonemes    : "h# p el v tcl jh r iy r iy z l tcl ax v b y ix r iy dx iy y ix s ix n tcl t ae s tcl p el v dcl ch r iy ax dcl d b ix n kcl l tcl ix kcl k s eh s el h#"
+  Phoneme LER         : 0.3600
+  Predicted (beam search) : h# p el v tcl jh r iy r iy z l tcl ax v b y ix l r iy dx iy y ix s ix n tcl t ae s tcl p b el dcl ch r iy ax dcl b ix n kcl l tcl ix kcl k s eh s el h#
+  LER (beam search)       : 0.3543
+
+Evaluating Sample 57/64: SI475.WAV
+  Target Text         : "They will take a wedding trip later."
+  Target Phonemes     : "h# dh ey w el tcl t ey kcl k ax w eh dx iy ng tcl t r ih pcl p l ey tcl t axr h#"
+  Decoded Phonemes    : "h# p l ax tcl t ih ey l ih ey n ch ix kcl p l ih d axr h#"
+  Phoneme LER         : 0.5000
+  Predicted (beam search) : h# p l ax tcl t ih ey l ih ey n dcl ch ix kcl p l ih d axr h#
+  LER (beam search)       : 0.4750
+
+Evaluating Sample 58/64: SI1988.WAV
+  Target Text         : "How's it strike you, foul or fair?"
+  Target Phonemes     : "h# hh aw z ix s tcl t r ay kcl k y ux uw f aa l axr f eh er h#"
+  Decoded Phonemes    : "h# ah z ih s t r ay kcl k t y n f l ao r f h#"
+  Phoneme LER         : 0.4032
+  Predicted (beam search) : h# ah z ih s t r ay kcl k t y n f f l ao r f h#
+  LER (beam search)       : 0.3871
+
+Evaluating Sample 59/64: SA2.WAV
+  Target Text         : "Don't ask me to carry an oily rag like that."
+  Target Phonemes     : "h# d ow n tcl t ae s kcl k m iy dx ix kcl k eh r iy n q oy l iy r ae gcl g l ay kcl k dh ae tcl t h#"
+  Decoded Phonemes    : "h# d ow aw dcl d ae s n m iy dx ih kcl k eh r iy ix ng n g oy ih l iy r ae gcl l ay kcl p tcl t h#"
+  Phoneme LER         : 0.2900
+  Predicted (beam search) : h# d ow dcl d ae s epi n m iy dx ih kcl k eh r iy ix n g oy ih l iy r ae gcl g l ay kcl p dh tcl t h#
+  LER (beam search)       : 0.2000
+
+Evaluating Sample 60/64: SX189.WAV
+  Target Text         : "Destroy every file related to my audits."
+  Target Phonemes     : "h# d ax-h s tcl t r oy eh v r iy f aa l r ix l ey dx ix dcl t ax-h m ay q ao dx ix tcl s h#"
+  Decoded Phonemes    : "h# ix s tcl t er axr m ix f aa ix n y ih kcl b eh dx ao dx ix z h#"
+  Phoneme LER         : 0.4505
+  Predicted (beam search) : h# ix s tcl t er axr m ix f aa ix y ih kcl dh b eh dx ax ao dx ix z h#
+  LER (beam search)       : 0.4615
+
+Evaluating Sample 61/64: SX14.WAV
+  Target Text         : "Before Thursday's exam, review every formula."
+  Target Phonemes     : "h# b iy f ao r th er z dcl d ey z ix gcl z ae m pau r ix v y ux ax q eh v r iy f ao r m y ix l ah h#"
+  Decoded Phonemes    : "h# iy f oy v dh ih z t z ih gcl dcl z r m r iy q ae r iy f ao r m ix l tcl h#"
+  Phoneme LER         : 0.4300
+  Predicted (beam search) : h# iy f w oy v dh ih z t ey z ih gcl dcl z r m r iy q ae r iy f ao r m ix l tcl h#
+  LER (beam search)       : 0.4100
+
+Evaluating Sample 62/64: SA2.WAV
+  Target Text         : "Don't ask me to carry an oily rag like that."
+  Target Phonemes     : "h# d ow n t ae s kcl m iy dx ix kcl k eh r iy ix n q oy l iy r ae gcl g l ay kcl k dh ae q h#"
+  Decoded Phonemes    : "h# d ao dcl d ae s epi m iy ih dx ix ih kcl k eh r n ax w ow oy r ae kcl ay kcl bcl b ae kcl q"
+  Phoneme LER         : 0.4301
+  Predicted (beam search) : h# d ao dcl d ae s epi m iy ih dx ix ih kcl k eh r n ax w ow oy r ae kcl ay kcl bcl b ae kcl q h#
+  LER (beam search)       : 0.4194
+
+Evaluating Sample 63/64: SX124.WAV
+  Target Text         : "Objects made of pewter are beautiful."
+  Target Phonemes     : "h# aa bcl jh ih kcl s epi m ey dx ax v pcl p y uw dx axr r axr bcl b y uw dx ax f uh l h#"
+  Decoded Phonemes    : "h# q aa dcl ih kcl k t s epi m ey dx ih p dx ux dx axr bcl b y n nx ax f ao n h#"
+  Phoneme LER         : 0.3483
+  Predicted (beam search) : h# q aa dcl ih kcl k t s epi m ey dx ih p dx ux dx axr bcl b y n nx ax f ao n h#
+  LER (beam search)       : 0.3483
+
+Evaluating Sample 64/64: SA1.WAV
+  Target Text         : "She had your dark suit in greasy wash water all year."
+  Target Phonemes     : "h# sh iy hv ae dcl d y er dcl d aa r kcl k s uw dx ih ng gcl g r iy s iy w aa sh epi w aa dx er q ao l y iy axr h#"
+  Decoded Phonemes    : "h# sh iy hv ae dcl d y axr dcl d aa r kcl k s ux dcl d ix n ix gcl g r iy s w aa sh aa dx ao l ih axr h#"
+  Phoneme LER         : 0.2456
+  Predicted (beam search) : h# t sh iy hv ae dcl d y axr dcl d aa r kcl k s ux dcl d ix n ix gcl g r iy s w aa sh aa dx q ao l ih axr h#
+  LER (beam search)       : 0.2456
+
+--- Evaluation Summary ---
+Average Phoneme LER : 0.3704
+Saved training history plot to blstm_training_history.png
